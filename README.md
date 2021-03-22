@@ -41,7 +41,7 @@ Round trip time	 | RTT measured for each connection between client and SSL-Offlo
 
 ### Network Dump
 
-> # tcpdump
+> tcpdump
 ```
 23:36:26.013903 IP adj-ubuntu.ssh > _gateway.54987: Flags [P.], seq 1434032:1436816, ack 10401, win 65535, length 2784
 23:36:26.014039 IP adj-ubuntu.ssh > _gateway.54987: Flags [P.], seq 1436816:1437072, ack 10401, win 65535, length 256
@@ -55,7 +55,7 @@ Round trip time	 | RTT measured for each connection between client and SSL-Offlo
 23:36:26.014690 IP _gateway.54987 > adj-ubuntu.ssh: Flags [.], ack 1437520, win 65535, length 0
 23:36:26.014803 IP _gateway.54987 > adj-ubuntu.ssh: Flags [.], ack 1437792, win 65535, length 0
 ```
-> # tcpdump -D
+> tcpdump -D
 ```
 root@adj-ubuntu:/proc/sys/fs# tcpdump -D
 1.enp0s3 [Up, Running]
