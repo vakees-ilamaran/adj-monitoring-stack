@@ -71,3 +71,13 @@ root@adj-ubuntu:/proc/sys/fs# tcpdump -D
 ### Process Monitoring Metrics
 * Prometheus custom exporter (Python Code which could check the aliveness of the process and report it to the promethues server)
 * Nagios for the process monitoring.
+
+Key Metrics for Alert setup in a SSL Ofloading Server
+----
+* CPU load - Peak CPU Utilization could sacrifice the SSL Ofloading process using OOM killer.
+* Increase in file descriptor - This causes slower responses and higher wait time will cause high FD’s on server.
+* SSL Certificate Expiry on the Proxy Server
+ * CN match check
+ * Days to expiry 
+* Memory Free
+* SSL-Offloading Proxy Server Process Aliveness (With Nagios/ Promethues)
