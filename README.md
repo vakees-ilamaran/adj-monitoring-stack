@@ -69,4 +69,5 @@ root@adj-ubuntu:/proc/sys/fs# tcpdump -D
 ### Linux Kernel Dump
 
 ### Process Monitoring Metrics
-
+* Prometheus custom exporter (Python Code which could check the aliveness of the process and report it to the promethues server)
+* Nagios for the process monitoring.
