@@ -4,11 +4,11 @@ Prometheus exporter for hardware and OS metrics exposed by *NIX kernels, written
 
 ### Promethues Server Architecture
 
-![arch](/images/architecture.png)
+![arch](./images/architecture.png)
 
 ### Node Exporter Architecture
 
-![arch](/images/node_exporter.png)
+![arch](./images/node_exporter.png)
 
 
 Installing Node Exporter
