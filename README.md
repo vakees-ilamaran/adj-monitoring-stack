@@ -66,11 +66,23 @@ root@adj-ubuntu:/proc/sys/fs# tcpdump -D
 6.nfqueue (Linux netfilter queue (NFQUEUE) interface)
 7.usbmon1 (USB bus number 1)
 ```
-### Linux Kernel Dump
 
 ### Process Monitoring Metrics
 * Prometheus custom exporter (Python Code which could check the aliveness of the process and report it to the promethues server)
 * Nagios for the process monitoring.
+
+How to we do it ?
+------
+* **Server Stat** : The method i here use is using promtheus and node exporter
+[Please Click here to know how to do it](/node_exporter_and_promethues)
+* **Proxy Monitoring Stat**  : There are several methods i use here Nginx Vts Exporter
+[Please Click here to know how to do it](/nginx_vts_exporter_prometheus)
+    * Other Exporters:
+        * HAProxy Exporter
+        * F5 Exporter
+        * Netscalar Exporter 
+        * Squid Exporter
+
 
 Key Metrics for Alert setup in a SSL Ofloading Server
 ----
