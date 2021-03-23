@@ -2,7 +2,134 @@
 
 Prometheus exporter for hardware and OS metrics exposed by *NIX kernels, written in Go with pluggable metric collectors. This collects all the crucial information in depth and letting us customize the metrcis we need.
 
-## Metrics Collected
+Installing Node Exporter
+----
+
+The Prometheus Node Exporter is a single static binary that you can install via tarball. Once you've downloaded it from the Prometheus downloads page extract it, and run it:
+```
+wget https://github.com/prometheus/node_exporter/releases/download/v*/node_exporter-*.*-amd64.tar.gz
+tar xvfz node_exporter-*.*-amd64.tar.gz
+cd node_exporter-*.*-amd64
+./node_exporter
+```
+
+Once the Node Exporter is installed and running, you can verify that metrics are being exported by cURLing the /metrics endpoint:
+
+```
+curl http://localhost:9100/metrics
+```
+
+Glimpse of how metrics looks like
+----
+
+**CPU Stats**
+```
+# HELP node_cpu_seconds_total Seconds the cpus spent in each mode.
+# TYPE node_cpu_seconds_total counter
+node_cpu_seconds_total{cpu="0",mode="idle"} 48649.88
+node_cpu_seconds_total{cpu="0",mode="iowait"} 169.99
+node_cpu_seconds_total{cpu="0",mode="irq"} 0
+node_cpu_seconds_total{cpu="0",mode="nice"} 57.5
+node_cpu_seconds_total{cpu="0",mode="softirq"} 8.05
+node_cpu_seconds_total{cpu="0",mode="steal"} 0
+node_cpu_seconds_total{cpu="0",mode="system"} 1058.32
+node_cpu_seconds_total{cpu="0",mode="user"} 4234.94
+node_cpu_seconds_total{cpu="1",mode="idle"} 9413.55
+node_cpu_seconds_total{cpu="1",mode="iowait"} 57.41
+node_cpu_seconds_total{cpu="1",mode="irq"} 0
+node_cpu_seconds_total{cpu="1",mode="nice"} 46.55
+node_cpu_seconds_total{cpu="1",mode="softirq"} 7.58
+node_cpu_seconds_total{cpu="1",mode="steal"} 0
+node_cpu_seconds_total{cpu="1",mode="system"} 1034.82
+node_cpu_seconds_total{cpu="1",mode="user"} 4285.06
+```
+**Disk Stats**
+```
+# HELP node_disk_io_now The number of I/Os currently in progress.
+# TYPE node_disk_io_now gauge
+node_disk_io_now{device="sda"} 0
+```
+**File System**
+```
+# HELP node_filesystem_avail_bytes Filesystem space available to non-root users in bytes.
+# TYPE node_filesystem_avail_bytes gauge
+node_filesystem_avail_bytes{device="/dev/mapper/vg1-lv_root",fstype="ext4",mountpoint="/"} 2.0224393216e+10
+
+# HELP node_filesystem_device_error Whether an error occurred while getting statistics for the given device.
+# TYPE node_filesystem_device_error gauge
+node_filesystem_device_error{device="/dev/mapper/vg1-lv_root",fstype="ext4",mountpoint="/"} 0
+
+# HELP node_filesystem_files Filesystem total file nodes.
+# TYPE node_filesystem_files gauge
+node_filesystem_files{device="/dev/mapper/vg1-lv_root",fstype="ext4",mountpoint="/"} 1.671168e+06
+
+```
+**Load average**
+```
+# HELP node_load1 1m load average.
+# TYPE node_load1 gauge
+node_load1 0
+# HELP node_load15 15m load average.
+# TYPE node_load15 gauge
+node_load15 0
+# HELP node_load5 5m load average.
+# TYPE node_load5 gauge
+node_load5 0
+```
+**Netstat**
+```
+# HELP node_netstat_Icmp_InErrors Statistic IcmpInErrors.
+# TYPE node_netstat_Icmp_InErrors untyped
+node_netstat_Icmp_InErrors 808
+
+# HELP node_netstat_Icmp_InMsgs Statistic IcmpInMsgs.
+# TYPE node_netstat_Icmp_InMsgs untyped
+node_netstat_Icmp_InMsgs 147294
+
+# HELP node_netstat_Icmp_OutMsgs Statistic IcmpOutMsgs.
+# TYPE node_netstat_Icmp_OutMsgs untyped
+node_netstat_Icmp_OutMsgs 2.287623e+06
+
+# HELP node_netstat_IpExt_InOctets Statistic IpExtInOctets.
+# TYPE node_netstat_IpExt_InOctets untyped
+node_netstat_IpExt_InOctets 8.9438844307199e+13
+
+# HELP node_netstat_IpExt_OutOctets Statistic IpExtOutOctets.
+# TYPE node_netstat_IpExt_OutOctets untyped
+node_netstat_IpExt_OutOctets 7.2850849351548e+13
+
+# HELP node_netstat_Ip_Forwarding Statistic IpForwarding.
+# TYPE node_netstat_Ip_Forwarding untyped
+node_netstat_Ip_Forwarding 2
+
+```
+**Meminfo**
+```
+# HELP node_memory_Mapped_bytes Memory information field Mapped_bytes.
+# TYPE node_memory_Mapped_bytes gauge
+node_memory_Mapped_bytes 5.3149696e+07
+
+# HELP node_memory_MemFree_bytes Memory information field MemFree_bytes.
+# TYPE node_memory_MemFree_bytes gauge
+node_memory_MemFree_bytes 4.070977536e+09
+
+# HELP node_memory_MemTotal_bytes Memory information field MemTotal_bytes.
+# TYPE node_memory_MemTotal_bytes gauge
+node_memory_MemTotal_bytes 8.25524224e+09
+```
+**filefd**
+```
+# HELP node_filefd_allocated File descriptor statistics: allocated.
+# TYPE node_filefd_allocated gauge
+node_filefd_allocated 1312
+
+# HELP node_filefd_maximum File descriptor statistics: maximum.
+# TYPE node_filefd_maximum gauge
+node_filefd_maximum 793830
+```
+
+Metrics Collected
+----------
 
 Name     | Description | OS
 ---------|-------------|----
@@ -72,5 +199,3 @@ systemd | Exposes service and system status from [systemd](http://www.freedeskto
 tcpstat | Exposes TCP connection status information from `/proc/net/tcp` and `/proc/net/tcp6`. (Warning: the current version has potential performance issues in high load situations.) | Linux
 wifi | Exposes WiFi device and station statistics. | Linux
 zoneinfo | Exposes NUMA memory zone metrics. | Linux
-
-
