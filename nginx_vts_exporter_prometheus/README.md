@@ -1,6 +1,5 @@
-# Node Exporter and Prometheus for Server Stats
-
-Prometheus exporter for hardware and OS metrics exposed by *NIX kernels, written in Go with pluggable metric collectors. This collects all the crucial information in depth and letting us customize the metrcis we need.
+# Nginx VTS Exporter and Prometheus
+Nginx VTS Exporter will expose the metrics and these metrics will be formed into api endpoint which will be consumed by promethues server finally
 
 How to Do it?
 ------
