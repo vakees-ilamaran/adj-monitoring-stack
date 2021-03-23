@@ -57,6 +57,30 @@ node_cpu_seconds_total{cpu="1",mode="user"} 4285.06
 # HELP node_disk_io_now The number of I/Os currently in progress.
 # TYPE node_disk_io_now gauge
 node_disk_io_now{device="sda"} 0
+
+node_disk_io_now
+The number of I/Os in progress.
+
+node_disk_io_time_seconds_total
+Incremented when I/O is in progress.
+
+node_disk_read_bytes_total
+Bytes read by I/Os.
+
+node_disk_read_time_seconds_total
+The time taken by read I/Os.
+
+node_disk_reads_completed_total
+The number of complete I/Os.
+
+node_disk_written_bytes_total
+Bytes written by I/Os.
+
+node_disk_write_time_seconds_total
+The time taken by write I/Os.
+
+node_disk_writes_completed_total
+The number of complete write I/Os.
 ```
 **File System**
 ```
