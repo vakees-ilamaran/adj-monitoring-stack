@@ -74,7 +74,7 @@ root@adj-ubuntu:/proc/sys/fs# tcpdump -D
 How to we do it ?
 ------
 * **Server Stat** : The method i here use is using promtheus and node exporter
-[Please Click here to know how to do it](/node_exporter_and_promethues)
+[Please Click here to know how to do it](/node_exporter_and_prometheus)
 * **Proxy Monitoring Stat**  : There are several methods i use here Nginx Vts Exporter
 [Please Click here to know how to do it](/nginx_vts_exporter_prometheus)
     * Other Exporters:
