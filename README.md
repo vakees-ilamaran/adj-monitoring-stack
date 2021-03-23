@@ -73,16 +73,20 @@ root@adj-ubuntu:/proc/sys/fs# tcpdump -D
 
 How to we do it ?
 ------
-* **Server Stat** : The method i here use is using promtheus and node exporter
-[Please Click here to know how to do it](/node_exporter_and_prometheus)
-* **Proxy Monitoring Stat**  : There are several methods i use here Nginx Vts Exporter
-[Please Click here to know how to do it](/nginx_vts_exporter_prometheus)
+* **Server Stat** : 
+  * The method i here use is using promtheus and node exporter.
+   [Please Click here to know how to do it](/node_exporter_and_prometheus)
+* **Proxy Monitoring Stat** : 
+  * There are several methods i use here Nginx Vts Exporter.
+  [Please Click here to know how to do it](/nginx_vts_exporter_prometheus)
     * Other Exporters:
         * HAProxy Exporter
         * F5 Exporter
         * Netscalar Exporter 
         * Squid Exporter
-
+**Process Monitoring Metrics**
+  * Nagios for Exporters (Monitoring & Proxy server Exporters)
+  * Python custom exporter to get the process and feed it to the endpoint where prometheus could scrape the metrics.
 
 Key Metrics for Alert setup in a SSL Ofloading Server
 ----
