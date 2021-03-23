@@ -71,7 +71,7 @@ root@adj-ubuntu:/proc/sys/fs# tcpdump -D
 * Prometheus custom exporter (Python Code which could check the aliveness of the process and report it to the promethues server)
 * Nagios for the process monitoring.
 
-How to we do it ?
+How to do it ?
 ------
 * **Server Stat** : 
   * The method i here use is using promtheus and node exporter.
