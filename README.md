@@ -81,3 +81,10 @@ Key Metrics for Alert setup in a SSL Ofloading Server
  * Days to expiry 
 * Memory Free
 * SSL-Offloading Proxy Server Process Aliveness (With Nagios/ Promethues)
+
+Challenges of SSL-Offloading Proxy Server Monitoring
+----------
+* Internet Facing Firewall Monitoring : Catch Security Threats, DDoS attacks , Spoofing
+* HA of the monitoring, Need to make sure Monitoring stack is always running with zero downtime.
+* Authenticity of the monitoring Data.
+* Key Sizes of Requests - It will eat up the CPU during SSL offloading.
