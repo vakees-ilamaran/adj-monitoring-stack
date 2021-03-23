@@ -2,6 +2,15 @@
 
 Prometheus exporter for hardware and OS metrics exposed by *NIX kernels, written in Go with pluggable metric collectors. This collects all the crucial information in depth and letting us customize the metrcis we need.
 
+### Promethues Server Architecture
+
+![arch](/images/architecture.png)
+
+### Node Exporter Architecture
+
+![arch](/images/node_exporter.png)
+
+
 Installing Node Exporter
 ----
 
