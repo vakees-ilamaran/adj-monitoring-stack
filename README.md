@@ -88,6 +88,9 @@ How to we do it ?
   * Nagios for Exporters (Monitoring & Proxy server Exporters)
   * Python custom exporter to get the process and feed it to the endpoint where prometheus could scrape the metrics.
 
+> # Once we get the metrics we can feed that into the prometheus server. The prometheus server architecture and scraping part is not included in the document.
+> # I can add it into the next release upon request.
+
 Key Metrics for Alert setup in a SSL Ofloading Server
 ----
 * CPU load - Peak CPU Utilization could sacrifice the SSL Ofloading process using OOM killer.
