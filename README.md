@@ -84,7 +84,7 @@ How to we do it ?
         * F5 Exporter
         * Netscalar Exporter 
         * Squid Exporter
-**Process Monitoring Metrics**
+* **Process Monitoring Metrics**
   * Nagios for Exporters (Monitoring & Proxy server Exporters)
   * Python custom exporter to get the process and feed it to the endpoint where prometheus could scrape the metrics.
 
