@@ -146,7 +146,7 @@ sudo systemctl start nginx_vts_exporter
 sudo systemctl status nginx_vts_exporter
 ```
 You can get the metrics exposed in 9913 port
-![prom](./images/promethues_nginx_vts.png)
+![prom](./images/prometheus_nginx_vts.png)
 
 
 
@@ -162,4 +162,4 @@ scrape_configs:
     — targets: [‘xxx.xxx.xxx.xxx:9913’]
 ```
 
-![status](./images/prometheus_status.png)
+![status](./images/promethues_status.png)
